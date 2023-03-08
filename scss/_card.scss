@@ -1,0 +1,70 @@
+.body-color {
+  background: linear-gradient(
+    to right,
+    #00c901,
+    #f4e901,
+    #ff8700,
+    #ff8700,
+    #e1000e,
+    #ac006e,
+    #008ae2
+  );
+}
+
+.card {
+  background-color: black;
+  border-radius: 30px;
+}
+
+.card-body {
+  //background-color: #616a6b;
+  width: 100%;
+}
+
+.imgProductos {
+  max-width: 100%;
+  height: 200px;
+  &:hover {
+    transform: scale(110%);
+  }
+}
+
+.styleName {
+  font-family: $redHatDisplay;
+  color: aliceblue;
+}
+
+.styleNumber {
+  font-family: $redHatDisplay;
+  color: aliceblue;
+}
+
+.btnCard {
+  color: white;
+  background-color: #3498db;
+  font-family: $redHatDisplay;
+  &:hover {
+    background-color: #239b56;
+    color: white;
+    transition: all 0.5s;
+    box-shadow: 0 0 20px #239b56;
+  }
+}
+
+.btnColor {
+  background-color: #5d6d7e;
+  color: aliceblue;
+  &:hover {
+    background-color: #e74c3c;
+    color: aliceblue;
+  }
+}
+
+.btnCarrito {
+  background-color: #c39bd3;
+  color: black;
+  &:hover {
+    background-color: #6c3483;
+    color: white;
+  }
+}

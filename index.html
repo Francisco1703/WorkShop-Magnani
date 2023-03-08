@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apple Store</title>
+    <link rel="shortcut icon" href="img/apple.png" />
+    <!--CSS TOASTIFY-->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
+    <!--CSS PERSONAL-->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&family=Libre+Baskerville:ital@0;1&family=Red+Hat+Display&family=Trispace:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="container-fluid">
+    <header class="container-fluid">
+      <div
+        class="divHeader bg-light text-center d-flex justify-content-center row p-3"
+      >
+        <h1
+          class="ms-md-3 text-center col-12 col-sm-10 appleStoreTitle fw-bolder"
+        >
+          Apple
+          <img class="imgTitle" src="img/apple.png" alt="Logo de Apple" /> Store
+        </h1>
+
+        <button
+          id="paginaDelCarrito"
+          class="btn btn-success col-10 col-sm-2 ml-auto carritoStyles"
+        >
+          <img
+            class="imgCarrito"
+            src="img/carrito.png"
+            alt="Carrito de compras"
+          />
+        </button>
+      </div>
+    </header>
+    <div class="body-color mt-0">
+      <div class="row" id="contenedorProductos"></div>
+      <hr />
+
+      <div class="d-flex justify-content-center align-items-center">
+        <button
+          id="verCarrito"
+          class="btnCarrito btn rounded-pill text-center me-3"
+        >
+          Ver Carrito
+        </button>
+        <button id="vaciarCarrito" class="btnCarrito btn rounded-pill">
+          Vaciar Carrito
+        </button>
+      </div>
+      <p id="totalCarrito" class="totalCompra text-center fw-bold"></p>
+      <div id="contenedorCarrito" class="row"></div>
+    </div>
+
+    <!--JS BOOTSTRAP-->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
+    <!-- SWEET ALERT -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- TOASTIFY -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
+    <!--JS PERSONAL-->
+    <script src="js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+.divHeader {
+  background: linear-gradient(
+    to right,
+    #00c901,
+    #f4e901,
+    #ff8700,
+    #ff8700,
+    #e1000e,
+    #ac006e,
+    #008ae2
+  );
+}
+
+.appleStoreTitle {
+  list-style: none;
+  text-decoration: none;
+  font-family: $libreBaskerville;
+  font-size: 200%;
+  color: black;
+}
+
+.imgCarrito {
+  width: 35px;
+  &:hover {
+    transform: scale(0.9);
+  }
+}
+
+.carritoStyles {
+  max-width: 100%;
+  //   width: 70px;
+  background-color: #2ecc71;
+  &:hover {
+    background-color: #239b56;
+  }
+}
