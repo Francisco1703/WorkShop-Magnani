@@ -32,12 +32,7 @@ const iphone14Plus = new Producto(
   "img/iphone14plus.png"
 );
 const iphone13 = new Producto(5, "Iphone 13", 699, "img/iphone13.png");
-const iphone13Mini = new Producto(
-  6,
-  "Iphone 13 Mini",
-  599,
-  "img/iphone13mini.png"
-);
+const iphone13Mini = new Producto(6, "Iphone 13 Mini", 599, "img/iphone13.png");
 const iphoneSE = new Producto(7, "Iphone SE", 429, "img/iphoneSE.png");
 const iphone12 = new Producto(8, "Iphone 12", 599, "img/iphone12.png");
 
