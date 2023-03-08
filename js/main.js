@@ -36,7 +36,7 @@ const iphone13Mini = new Producto(
   6,
   "Iphone 13 Mini",
   599,
-  "img/iphone13Mini.png"
+  "img/iphone13mini.png"
 );
 const iphoneSE = new Producto(7, "Iphone SE", 429, "img/iphoneSE.png");
 const iphone12 = new Producto(8, "Iphone 12", 599, "img/iphone12.png");
