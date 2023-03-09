@@ -10,6 +10,15 @@
   width: 50px;
 }
 
+.btnFinalizarCompra {
+  background-color: black;
+  color: white;
+}
+.btnFinalizarCompra:hover {
+  background-color: red;
+  color: white;
+}
+
 .body-color {
   background: linear-gradient(to right, #00c901, #f4e901, #ff8700, #ff8700, #e1000e, #ac006e, #008ae2);
 }

@@ -3,3 +3,12 @@
   height: 50px;
   width: 50px;
 }
+
+.btnFinalizarCompra {
+  background-color: black;
+  color: white;
+  &:hover {
+    background-color: red;
+    color: white;
+  }
+}

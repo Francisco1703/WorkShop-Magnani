@@ -188,15 +188,41 @@ const calcularTotal = () => {
   total.innerHTML = `Total: $${totalCompra}`;
 };
 
-const paginaDelCarrito = document.getElementById("paginaDelCarrito");
+//Botón para finalizar la compra:
 
-/* paginaDelCarrito.addEventListener("click", () => {
-  Swal.fire({
-    title: "Hola comision",
-    text: "Esto es un mensaje",
-    icon: "success",
-  });
-}); */
+const btnFinalizarCompra = document.getElementById("btnFinalizarCompra");
+
+btnFinalizarCompra.addEventListener("click", () => {
+  if (carrito == 0) {
+    Toastify({
+      text: "¡Error! No hay productos en el carrito.",
+      style: {
+        background: "red",
+      },
+    }).showToast();
+  } else {
+    Toastify({
+      text: "¡La compra fue exitosa",
+      duration: 3000,
+      position: "right",
+      gravity: "top",
+      style: {
+        background: "#28b463",
+      },
+    }).showToast();
+  }
+  finalizarCompra();
+});
+const finalizarCompra = () => {
+  carrito = [];
+  mostrarCarrito();
+  localStorage.clear();
+  console.log(carrito);
+};
+
+//Visualizar carrito de compras:
+
+const paginaDelCarrito = document.getElementById("paginaDelCarrito");
 
 paginaDelCarrito.addEventListener("click", () => {
   Swal.fire({
