@@ -202,7 +202,7 @@ btnFinalizarCompra.addEventListener("click", () => {
     }).showToast();
   } else {
     Toastify({
-      text: "¡La compra fue exitosa",
+      text: "¡La compra fue exitosa!",
       duration: 3000,
       position: "right",
       gravity: "top",
