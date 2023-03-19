@@ -57,7 +57,24 @@ if (localStorage.getItem("carrito")) {
 
 console.log(productos);
 
-//Muestro el nombre de la página modificando el DOM:
+//API de criptoYa:
+
+const criptoYa = "https://criptoya.com/api/dolar";
+
+const dolar = document.getElementById("dolar");
+
+let dolarBlue;
+
+setInterval(() => {
+  fetch(criptoYa)
+    .then((response) => response.json())
+    .then(({ oficial, solidario, mep, ccl, ccb, blue }) => {
+      dolar.innerHTML = `
+                <p class="fw-bold">Dolar OFICIAL: $${oficial} - Dolar SOLIDARIO $${solidario} - Dolar MEP $${mep} - Dolar CCL $${ccl} - Dolar CCB $${ccb} - Dolar BLUE $${blue}</p>
+                `;
+      dolarBlue = blue;
+    });
+}, 2000);
 
 //Muestro los productos en la pantalla cambiando el DOM:
 
@@ -135,7 +152,7 @@ const mostrarCarrito = () => {
                     <div class="card-body">
                       <h2 class="text-center styleName"> ${producto.nombre} </h2>
                       <p class="text-center styleNumber"> $${producto.precio} </p>
-                      <p class="text-center styleNumber"> ${producto.cantidad} </p>
+                      <p class="text-center styleNumber"> ${producto.cantidad}</p>
                       <button class="btn rounded-pill  py-2 px-4 btnColor" id="eliminar${producto.id}"> Eliminar </button> 
                     </div>
                   </div>`;
@@ -210,36 +227,43 @@ btnFinalizarCompra.addEventListener("click", () => {
         background: "#28b463",
       },
     }).showToast();
+    Toastify({
+      text: `El precio del dolar BLUE es $ ${dolarBlue}`,
+      duration: "5000",
+      position: "right",
+      gravity: "top",
+      style: {
+        background: "#abebc6 ",
+        color: "black",
+      },
+    }).showToast();
+
+    Swal.fire({
+      html: `
+        <h2 class="fs-4 pb-4"> Ingrese sus datos para enviarle la boleta:</h2>
+        <input class="my-2" type="text" id="nombre datos" placeholder="Nombre"  /> <br/>
+        <input class="my-2" type="text" id="apellido datos" placeholder="Apellido"  /> <br/>
+        <input class="my-2" type="email" id="email datos" placeholder="Email"  />
+        `,
+      background: "#dc7633",
+      confirmButtonText: "Enviar",
+      confirmButtonColor: "#f8c471",
+      backdrop: "#edbb99",
+      footer: `El precio del dolar BLUE es $ ${dolarBlue}`,
+      width: `50%`,
+      color: "black",
+      allowOutsideClick: false,
+      timer: 60000,
+      timerProgressBar: true,
+    });
   }
+
   finalizarCompra();
 });
+
 const finalizarCompra = () => {
   carrito = [];
   mostrarCarrito();
   localStorage.clear();
   console.log(carrito);
 };
-
-//Visualizar carrito de compras:
-
-const paginaDelCarrito = document.getElementById("paginaDelCarrito");
-
-paginaDelCarrito.addEventListener("click", () => {
-  Swal.fire({
-    title: "Carrito de Compras",
-    imageUrl: "img/carrito.png",
-    confirmButtonText: "Comprar",
-    showCancelButton: true,
-    cancelButtonText: "Cancelar compra",
-  }).then((result) => {
-    if (result.isConfirmed) {
-      Swal.fire({
-        title: "¡Producto comprado!",
-        icon: "success",
-        confirmButtonText: "Aceptar",
-      });
-    }
-  });
-});
-
-const verCompras = document.getElementById("verCompras");
